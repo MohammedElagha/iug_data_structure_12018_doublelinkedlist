@@ -127,4 +127,24 @@ public class CustomDoubleLinkedList<E> {
             }
         }
     }
+    
+    public E get(int index) {
+        if(index == 0) {
+            return head.getData();
+        } else if(index == size - 1) {
+            return tail.getData();
+        } else {
+            Node<E> current = head;
+            
+            for(int i = 0 ; i < size ; i++) {
+                if(i == index) {
+                    break;
+                }
+                
+                current = current.next;
+            }
+            
+            return current.getData();
+        }
+    }
 }
